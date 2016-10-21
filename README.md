@@ -108,7 +108,7 @@ Customize the about items to your own style by overriding the default templates 
 * **HomeItemStyle:** Override to change the default style of the home items
 
 ## Sample Project
-[sample](https://github.com/goedware/UWP-About-Page/tree/master/GoedWare.Controls.Breadcrumb/GoedWare.Samples.Breadcrumb)
+[sample](https://github.com/goedware/UWP-Breadcrumb-Control/tree/master/GoedWare.Controls.Breadcrumb/GoedWare.Samples.Breadcrumb)
 
 ## License
 
