@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="GoedWare.Samples.Breadcrumb.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:breadcrumb="using:GoedWare.Controls.Breadcrumb"
+    xmlns:breadcrumb1="using:GoedWare.Samples.Breadcrumb"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="ItemTemplate">
+            <Grid>
+                <TextBlock Text="{Binding Name}"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="SeperatorTemplate">
+            <Grid>
+               <SymbolIcon Symbol="Play"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <breadcrumb:BreadcrumbControl
+            Name="BreadcrumbControl"
+            ItemTemplate="{StaticResource ItemTemplate}"
+            SeperatorTemplate="{StaticResource SeperatorTemplate}">
+            <breadcrumb:BreadcrumbControl.HomeTemplate>
+                <DataTemplate>
+                    <SymbolIcon Symbol="AllApps"></SymbolIcon>
+                </DataTemplate>
+            </breadcrumb:BreadcrumbControl.HomeTemplate>
+        </breadcrumb:BreadcrumbControl>
+        <Button VerticalAlignment="Center" Content="Test"
+                Click="ButtonBase_OnClick"></Button>
+    </Grid>
+</Page>

@@ -1,0 +1,23 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GoedWare.Controls.Breadcrumb">
+   
+    <Style TargetType="local:BreadcrumbControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:BreadcrumbControl">
+                    <Grid x:Name="PART_RootGrid">
+                        <StackPanel x:Name="PART_Stack"
+                                    Orientation="Horizontal"
+                                    VerticalAlignment="Top">
+                            
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+
+</ResourceDictionary>
