@@ -63,6 +63,13 @@ You can specify your own action when the Home item is selected. You can specify 
 * Connect to the **HomeSelected** event. This event will occur when the Home item is selected
 * Set the **HomeCommand** property. This will execute the command when the home item is selected
 
+```csharp
+private void OnHomeSelected(object sender, EventArgs e)
+{
+    // Do something
+}
+````
+
 ### 6. Item Selected 
 You can specify your own action when a breadcrumb item is selected. You can specify the action in 2 different ways:
 
@@ -73,6 +80,14 @@ The event and command will have a **BreadcrumbEventArgs** as parameter that cons
 
 * **Item** the current item that is selected
 * **ItemIndex** the item index of the item that is selected
+
+```csharp
+private void OnItemSelected(object sender, BreadcrumbEventArgs e)
+{
+    var item = e.Item;
+    var index = e.ItemIndex;
+}
+````
 
 ### 7. ItemsSource
 You can specify the breadcrumb items of the control by setting the *ItemsSource* property. You can bind any IEnumerable to this control. If you use an ObservableCollection the control will update itself when you add or remove an item in the collection.
