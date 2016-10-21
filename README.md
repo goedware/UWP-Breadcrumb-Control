@@ -30,18 +30,22 @@ Grab the latest version from NuGet
 
 ## Usage
 ### 1. Home 
-The home item is the first item in the breadcrumb control and is always visible. You can specify the home item in 3 different ways:
+The home item is the first item in the breadcrumb control and is always visible. You can specify the home item in 4 different ways:
 
 * Do nothing and use the default template that consists of a SymbolIcon with the *Home* symbol
 * Set the **HomeIcon** property. This will display the icon specified in the default template above
 * Set the **HomeText** property. This will display text as the Home item
 * Set the **HomeTemplate** property. This will display your specified datatemplate as Home item
 
+If *HomeText* is specfied. The control will use that before any template or Icon. If not it will first use the template and else the icon specified.
+
 ### 2. Breadcrumb Items 
 Breadcrumb items are the items that display your information in the breadcrumb and are selectable. You can specify the items in 2 different ways:
 
 * Set the **DisplayMemberPath** property. This will display the specified member/path of the current datacontext
 * Set the **ItemTemplate** property. This will display your specified datatemplate as breadcrumb item
+
+If *ItemTemplate* is specified it will use that instead of any *DisplayMemberPath*.
 
 ### 3. Seperator Items 
 Seperator items are the items that are displayed between your breadcrumb items and between the Home item and your first crumb. You can specify the items in 3 different ways:
@@ -50,12 +54,16 @@ Seperator items are the items that are displayed between your breadcrumb items a
 * Set the **Seperator** property. This will display the specfied string as seperator
 * Set the **SeperatorTemplate** property. This will display your specified datatemplate as seperator item
 
+If *SeperatorTemplate* is specified it will use that instead of *Seperator*.
+
 ### 4. Overflow Items 
 Overflow items will replace your breadcrumb items when the control is too large (horizontal) to be displayed on the screen. *The last breadcrumb will never transform into an overflow item.* You can specify the items in 3 different ways:
 
 * Do nothing and use the default overflow string *...*
 * Set the **OverFlow** property. This will display the specfied string as overflow
 * Set the **OverFlowTemplate** property. This will display your specified datatemplate as overflow item
+
+If *OverFlowTemplate* is specified it will use that instead of *OverFlow*.
 
 ### 5. Home Selected 
 You can specify your own action when the Home item is selected. You can specify the action in 2 different ways:
