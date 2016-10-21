@@ -5,7 +5,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:breadcrumb="using:GoedWare.Controls.Breadcrumb"
-    xmlns:breadcrumb1="using:GoedWare.Samples.Breadcrumb"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -23,16 +22,17 @@
     
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <breadcrumb:BreadcrumbControl
-            Name="BreadcrumbControl"
+            x:Name="BreadcrumbControl"
+            VerticalAlignment="Top"
+            OverFlow="..."
             ItemTemplate="{StaticResource ItemTemplate}"
-            SeperatorTemplate="{StaticResource SeperatorTemplate}">
-            <breadcrumb:BreadcrumbControl.HomeTemplate>
-                <DataTemplate>
-                    <SymbolIcon Symbol="AllApps"></SymbolIcon>
-                </DataTemplate>
-            </breadcrumb:BreadcrumbControl.HomeTemplate>
-        </breadcrumb:BreadcrumbControl>
-        <Button VerticalAlignment="Center" Content="Test"
-                Click="ButtonBase_OnClick"></Button>
+            SeperatorTemplate="{StaticResource SeperatorTemplate}"
+            />
+        <Button 
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center"
+            Content="Add crumb"
+            Click="OnClick"/>
     </Grid>
 </Page>
+

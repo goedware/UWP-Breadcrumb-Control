@@ -4,6 +4,7 @@ using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using GoedWare.Controls.Breadcrumb;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -14,7 +15,7 @@ namespace GoedWare.Samples.Breadcrumb
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private ObservableCollection<TestItem> TestList;
+        private ObservableCollection<DataItem> _dataSource;
         public MainPage()
         {
             this.InitializeComponent();
@@ -23,33 +24,37 @@ namespace GoedWare.Samples.Breadcrumb
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            TestList = new ObservableCollection<TestItem>()
+            _dataSource = new ObservableCollection<DataItem>()
             {
-                new TestItem() {Name = "Folder 1"},
-                new TestItem() {Name = "Folder 2"},
-                new TestItem() {Name = "Folder 3"}
+                new DataItem() {Name = "Folder 1"},
+                new DataItem() {Name = "Folder 2"},
+                new DataItem() {Name = "Folder 3"}
             };
-            this.BreadcrumbControl.ItemsSource = TestList;
-            this.BreadcrumbControl.HomeSelected += async (sender, args) =>
-            {
-                var dlg = new MessageDialog("Home item selected");
-                await dlg.ShowAsync();
-            };
-            this.BreadcrumbControl.ItemSelected += async (sender, args) =>
-            {
-                var dlg = new MessageDialog("Itemindex:" + args.ItemIndex, ((TestItem) args.Item).Name);
-                await dlg.ShowAsync();
-            };
-
+            this.BreadcrumbControl.ItemsSource = _dataSource;
+            this.BreadcrumbControl.ItemSelected += OnItemSelected;
+            this.BreadcrumbControl.HomeSelected += OnHomeSelected;
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        private async void OnHomeSelected(object sender, EventArgs eventArgs)
         {
-            TestList.Add(new TestItem() { Name = "Folder 7" });
+            var dlg = new MessageDialog("Home item selected");
+            await dlg.ShowAsync();
+        }
+
+        private async void OnItemSelected(object sender, BreadcrumbEventArgs e)
+        {
+            var dlg = new MessageDialog("ItemIndex:" + e.ItemIndex, ((DataItem)e.Item).Name);
+            await dlg.ShowAsync();
+        }
+
+
+        private void OnClick(object sender, RoutedEventArgs e)
+        {
+            _dataSource.Add(new DataItem() { Name = "Folder " + (_dataSource.Count + 1) });
         }
     }
 
-    public class TestItem
+    public class DataItem
     {
         public string Name { get; set; }
     }

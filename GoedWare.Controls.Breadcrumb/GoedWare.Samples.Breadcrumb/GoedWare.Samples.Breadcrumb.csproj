@@ -126,12 +126,6 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GoedWare.Controls.Breadcrumb\GoedWare.Controls.Breadcrumb.csproj">
-      <Project>{8fbc6bd9-3412-4dce-9aec-edb9b5d2ceca}</Project>
-      <Name>GoedWare.Controls.Breadcrumb</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
