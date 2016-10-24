@@ -76,23 +76,46 @@ namespace GoedWare.Controls.Breadcrumb
 
         private void ItemsOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            if (e.Action == NotifyCollectionChangedAction.Reset)
+            switch (e.Action)
             {
-                this.Items.Clear();
-            }
-            if(e.NewItems != null)
-            {
-                foreach (var item in e.NewItems)
+                case NotifyCollectionChangedAction.Add:
                 {
-                    this.Items.Add(item);
+                    if (e.NewItems != null)
+                    {
+                        var index = e.NewStartingIndex;
+                        foreach (var item in e.NewItems)
+                        {
+                            this.Items.Insert(index, item);
+                            index++;
+                        }
+                    }
+                    break;
                 }
-            }
-            if (e.OldItems != null)
-            {
-                foreach (var item in e.OldItems)
+                case NotifyCollectionChangedAction.Move:
                 {
-                    this.Items.Remove(item);
+                    var item = this.Items[e.OldStartingIndex];
+                    this.Items.RemoveAt(e.OldStartingIndex);
+                    this.Items.Insert(e.NewStartingIndex, item);
+                    break;
                 }
+                case NotifyCollectionChangedAction.Remove:
+                {
+                    if (e.OldItems != null)
+                    {
+                        foreach (var item in e.OldItems)
+                        {
+                            this.Items.Remove(item);
+                        }
+                    }
+                    break;
+                }
+                case NotifyCollectionChangedAction.Replace:
+                    break;
+                case NotifyCollectionChangedAction.Reset:
+                    this.Items.Clear();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
             this.OnApplyTemplate();
         }
