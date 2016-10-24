@@ -107,6 +107,9 @@ Customize the about items to your own style by overriding the default templates 
 * **ItemStyle:** Override to change the default style of the breadcrumb items
 * **HomeItemStyle:** Override to change the default style of the home items
 
+## Sample Project
+[sample](https://github.com/goedware/UWP-Breadcrumb-Control/tree/master/GoedWare.Controls.Breadcrumb/GoedWare.Samples.Breadcrumb)
+
 ## License
 
 ```
