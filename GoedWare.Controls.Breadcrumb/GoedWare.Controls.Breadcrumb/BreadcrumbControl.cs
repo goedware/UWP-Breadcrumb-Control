@@ -76,6 +76,10 @@ namespace GoedWare.Controls.Breadcrumb
 
         private void ItemsOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
+            if (e.Action == NotifyCollectionChangedAction.Reset)
+            {
+                this.Items.Clear();
+            }
             if(e.NewItems != null)
             {
                 foreach (var item in e.NewItems)

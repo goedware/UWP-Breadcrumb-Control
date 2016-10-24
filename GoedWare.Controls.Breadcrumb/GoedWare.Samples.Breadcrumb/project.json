@@ -1,6 +1,6 @@
 ﻿{
   "dependencies": {
-    "GoedWare.Controls.Breadcrumb": "1.0.0",
+    "GoedWare.Controls.Breadcrumb": "1.0.1",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0"
   },
   "frameworks": {
