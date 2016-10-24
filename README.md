@@ -1,4 +1,4 @@
-# UWP-Breadcrumb-Control ![version](http://img.shields.io/badge/original-v1.0.0-brightgreen.svg?style=flat) [![NuGet](https://img.shields.io/nuget/v/GoedWare.Controls.Breadcrumb.svg?label=NuGet)](https://www.nuget.org/packages/GoedWare.Controls.Breadcrumb/)
+# UWP-Breadcrumb-Control ![version](http://img.shields.io/badge/original-v1.0.2-brightgreen.svg?style=flat) [![NuGet](https://img.shields.io/nuget/v/GoedWare.Controls.Breadcrumb.svg?label=NuGet)](https://www.nuget.org/packages/GoedWare.Controls.Breadcrumb/)
 Create a Breadcrumb control for your Universal Windows Platform (UWP) app in just a few minutes.
 
 This library allows to generate a breadcrumb for your UWP app with less effort, it's fully customizable.
